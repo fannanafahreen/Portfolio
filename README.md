@@ -90,3 +90,4 @@ All content lives in `app.py` as Python dictionaries and lists. To update anythi
 - Email: [fannanafahreen@gmail.com](mailto:fannanafahreen@gmail.com)
 - LinkedIn: [linkedin.com/in/fannana-fahreen](https://www.linkedin.com/in/fannana-fahreen/)
 - GitHub: [github.com/fannanafahreen](https://github.com/fannanafahreen)
+- URL: [my-portfolio-m8mc.onrender](https://my-portfolio-m8mc.onrender.com/)
