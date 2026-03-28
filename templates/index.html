@@ -1,0 +1,111 @@
+{# index.html — CV home page.
+   Extends base.html and fills in the right-hand main area
+   with: Skills, Education, Work Experience, and Projects. #}
+{% extends "base.html" %}
+
+{% block title %}{{ owner.name }} — CV{% endblock %}
+
+{% block content %}
+
+  <!-- ══════════════════════════════
+       SKILLS
+       skill_groups is a list of
+       { label, items[] } dicts.
+       ══════════════════════════════ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Skills</h2>
+
+    <div class="skills-grid">
+      {% for group in skill_groups %}
+      <div class="skill-group">
+        <h3 class="skill-group-label">{{ group.label }}</h3>
+        <ul class="skill-pill-list">
+          {% for item in group['items'] %}
+          <li class="skill-pill">{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       EDUCATION
+       ══════════════════════════════ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Education</h2>
+
+    {% for edu in education %}
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <div>
+          <span class="cv-entry-title">{{ edu.degree }}</span>
+          <span class="cv-entry-sub">{{ edu.institution }}</span>
+        </div>
+        <span class="cv-entry-period">{{ edu.period }}</span>
+      </div>
+      <p class="cv-entry-detail">{{ edu.detail }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <!-- ══════════════════════════════
+       WORK EXPERIENCE
+       Each entry has a list of
+       bullet points (entry.points).
+       ══════════════════════════════ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Work Experience</h2>
+
+    {% for job in experience %}
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <div>
+          <span class="cv-entry-title">{{ job.role }}</span>
+          <span class="cv-entry-sub">{{ job.company }}</span>
+        </div>
+        <span class="cv-entry-period">{{ job.period }}</span>
+      </div>
+      <ul class="cv-bullets">
+        {% for point in job.points %}
+        <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </section>
+
+  <!-- ══════════════════════════════
+       PROJECTS
+       ══════════════════════════════ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Projects</h2>
+
+    <div class="project-grid">
+      {% for project in projects %}
+      <article class="project-card">
+        <div class="project-card-body">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-desc">{{ project.description }}</p>
+          <ul class="tag-list">
+            {% for tag in project.tags %}
+            <li class="tag">{{ tag }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="project-card-footer">
+          <a class="cv-link" href="{{ project.link }}">View &rarr;</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       FOOTER (inside main area)
+       ══════════════════════════════ -->
+  <footer class="cv-footer">
+    <p>&copy; 2026 {{ owner.name }}</p>
+  </footer>
+
+{% endblock %}

@@ -1,0 +1,407 @@
+/* ============================================================
+   style.css — CV / resume layout for Fannana Fahreen Aanan
+   Palette:
+     --sidebar-bg   #1a2535   dark navy sidebar
+     --sidebar-text #cbd5e1   light slate text in sidebar
+     --accent       #2563eb   professional blue
+     --bg           #f8fafc   near-white page background
+     --surface      #ffffff   card / section surface
+     --text         #1e293b   near-black body text
+     --muted        #64748b   secondary / caption text
+     --border       #e2e8f0   subtle divider
+   ============================================================ */
+
+:root {
+  --sidebar-bg:   #1a2535;
+  --sidebar-text: #cbd5e1;
+  --sidebar-muted:#8fa3b1;
+  --accent:       #2563eb;
+  --accent-light: #eff6ff;
+  --bg:           #f8fafc;
+  --surface:      #ffffff;
+  --text:         #1e293b;
+  --muted:        #64748b;
+  --border:       #e2e8f0;
+  --radius:       8px;
+  --sidebar-w:    280px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { list-style: none; }
+
+
+/* ══════════════════════════════════════════════════════
+   TWO-COLUMN CV LAYOUT
+   Left sidebar (fixed width) + right scrollable main
+   ══════════════════════════════════════════════════════ */
+.cv-wrapper {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(0,0,0,0.08);
+}
+
+
+/* ══════════════════════════════════════════════════════
+   SIDEBAR
+   ══════════════════════════════════════════════════════ */
+.sidebar {
+  width: var(--sidebar-w);
+  min-width: var(--sidebar-w);
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 2.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* Stick in place while the right column scrolls */
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Profile photo circle — replace the initials span with an <img> later */
+.profile-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  border: 4px solid rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+.photo-initials {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+/* To use a real photo, add this inside .profile-photo:
+   <img src="/static/img/photo.jpg" alt="Fahreen" />
+   and remove the .photo-initials span. */
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+
+.sidebar-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.sidebar-bio {
+  font-size: 0.83rem;
+  color: var(--sidebar-muted);
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+
+.sidebar-divider {
+  width: 40px;
+  border: none;
+  border-top: 2px solid var(--accent);
+  margin: 0 auto 1.4rem;
+}
+
+/* Contact list */
+.sidebar-contact {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.sidebar-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.83rem;
+  color: var(--sidebar-muted);
+  word-break: break-all;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.sidebar-contact a {
+  color: var(--sidebar-text);
+}
+
+.sidebar-contact a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   MAIN CONTENT AREA (right column)
+   ══════════════════════════════════════════════════════ */
+.cv-main {
+  flex: 1;
+  background: var(--surface);
+  padding: 2.8rem 2.8rem 2rem;
+  overflow-y: auto;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   SECTION WRAPPER
+   ══════════════════════════════════════════════════════ */
+.cv-section {
+  margin-bottom: 2.6rem;
+}
+
+/* Section heading with a left accent bar */
+.cv-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 1.4rem;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   SKILLS
+   ══════════════════════════════════════════════════════ */
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.skill-group-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.skill-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.skill-pill {
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid #bfdbfe;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   EDUCATION & EXPERIENCE ENTRIES
+   ══════════════════════════════════════════════════════ */
+.cv-entry {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cv-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Row: title+sub on the left, period on the right */
+.cv-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cv-entry-title {
+  display: block;
+  font-weight: 700;
+  font-size: 0.97rem;
+  color: var(--text);
+}
+
+.cv-entry-sub {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.1rem;
+}
+
+.cv-entry-period {
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.cv-entry-detail {
+  font-size: 0.87rem;
+  color: var(--muted);
+}
+
+/* Bullet points for work experience */
+.cv-bullets {
+  list-style: disc;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   PROJECT CARDS
+   ══════════════════════════════════════════════════════ */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.1rem;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+  border-color: #bfdbfe;
+}
+
+.project-card-body {
+  padding: 1.1rem 1.1rem 0.7rem;
+  flex: 1;
+}
+
+.project-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.project-desc {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  background: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.project-card-footer {
+  padding: 0.6rem 1.1rem 1rem;
+}
+
+.cv-link {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.cv-link:hover { text-decoration: underline; }
+
+
+/* ══════════════════════════════════════════════════════
+   FOOTER (inside main area)
+   ══════════════════════════════════════════════════════ */
+.cv-footer {
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — stack sidebar above main on small screens
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 700px) {
+  .cv-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    position: static;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .cv-main {
+    padding: 2rem 1.3rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

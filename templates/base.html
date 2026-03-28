@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{{ owner.name }}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  {# CV wrapper: sidebar on the left, main content on the right #}
+  <div class="cv-wrapper">
+
+    <!-- ═══════════════════════════════════════════
+         LEFT SIDEBAR
+         Contains: photo, name, title, bio, contact
+         ═══════════════════════════════════════════ -->
+    <aside class="sidebar">
+
+      <!-- Profile photo placeholder (replace src with a real image later) -->
+      <div class="profile-photo">
+        <img src="{{ url_for('static', filename='Fannana.jpg') }}" alt="Fahreen" />
+      </div>
+
+      <h1 class="sidebar-name">{{ owner.name }}</h1>
+      <p class="sidebar-title">{{ owner.title }}</p>
+
+      <p class="sidebar-bio">{{ owner.bio }}</p>
+
+      <!-- Divider line -->
+      <hr class="sidebar-divider" />
+
+      <!-- Contact / links -->
+      <ul class="sidebar-contact">
+        <li>
+          <span class="contact-icon">&#9993;</span>
+          <a href="mailto:{{ owner.email }}">{{ owner.email }}</a>
+        </li>
+        <li>
+          <span class="contact-icon">&#128222;</span>
+          <a href="tel:{{ owner.phone }}">{{ owner.phone }}</a>
+        </li>
+        <li>
+          <span class="contact-icon">&#128205;</span>
+          {{ owner.location }}
+        </li>
+        <li>
+          <span class="contact-icon">&#128279;</span>
+          <a href="{{ owner.github }}" target="_blank">GitHub</a>
+        </li>
+        <li>
+          <span class="contact-icon">&#128279;</span>
+          <a href="{{ owner.linkedin }}" target="_blank">LinkedIn</a>
+        </li>
+      </ul>
+
+    </aside>
+
+    <!-- ═══════════════════════════════════════════
+         RIGHT MAIN AREA
+         Child templates fill in this block.
+         ═══════════════════════════════════════════ -->
+    <main class="cv-main">
+      {% block content %}{% endblock %}
+    </main>
+
+  </div>{# end .cv-wrapper #}
+
+</body>
+</html>
