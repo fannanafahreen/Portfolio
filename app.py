@@ -110,6 +110,17 @@ projects = [
         "tags":  ["Python", "Flask", "HTML/CSS"],
         "link":  "#",
     },
+    {
+        "title":       "Fraud Detector",
+        "description": "Full-stack credit-card fraud detection app. "
+                       "An Isolation Forest model (scikit-learn) flags "
+                       "anomalous transactions via a FastAPI /predict endpoint; "
+                       "a React 18 / Vite frontend renders a confidence gauge "
+                       "with green/red result cards. Backend deployed on Render, "
+                       "frontend on Vercel.",
+        "tags":  ["Python", "FastAPI", "Scikit-learn", "React", "Vite"],
+        "link":  "https://github.com/fannanafahreen/fannanafahreen",
+    },
 ]
 
 
