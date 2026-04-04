@@ -83,13 +83,6 @@ experience = [
 # ── Projects ─────────────────────────────────────────────────
 projects = [
     {
-        "title":       "Weather Dashboard",
-        "description": "Fetches real-time weather data from a public API "
-                       "and displays it with clean interactive charts.",
-        "tags":  ["Python", "Flask", "REST API", "Chart.js"],
-        "link":  "#",
-    },
-    {
         "title":       "Customer Churn Predictor",
         "description": "End-to-end ML pipeline (EDA → feature engineering → "
                        "Random Forest) achieving 87 % accuracy on test data.",
