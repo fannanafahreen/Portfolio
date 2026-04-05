@@ -104,6 +104,15 @@ projects = [
         "link":  "#",
     },
     {
+        "title":       "Anti-Human Trafficking Dashboard",
+        "description": "Interactive Power BI dashboard analysing global human "
+                       "trafficking patterns using UNODC data (2003–2023, 160+ countries). "
+                       "Covers victim gender, age, exploitation type trends, and a country "
+                       "distribution map. Dataset cleaned with Python (Pandas) in Jupyter Notebook.",
+        "tags":  ["Power BI", "Python", "Pandas", "Jupyter"],
+        "link":  "https://github.com/fannanafahreen/Anti-Human-Trafficking-Analysis",
+    },
+    {
         "title":       "Fraud Detector",
         "description": "Full-stack credit-card fraud detection app. "
                        "An Isolation Forest model (scikit-learn) flags "
