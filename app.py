@@ -110,7 +110,7 @@ projects = [
                        "Covers victim gender, age, exploitation type trends, and a country "
                        "distribution map. Dataset cleaned with Python (Pandas) in Jupyter Notebook.",
         "tags":  ["Power BI", "Python", "Pandas", "Jupyter"],
-        "link":  "https://github.com/fannanafahreen/Anti-Human-Trafficking-Analysis",
+        "link":  "https://github.com/fannanafahreen/Human-Trafficking-Analysis",
     },
     {
         "title":       "Fraud Detector",
