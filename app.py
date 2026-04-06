@@ -100,11 +100,11 @@ projects = [
         "title":       "Portfolio Website",
         "description": "This CV-style portfolio, built from scratch with "
                        "Flask and plain CSS — no frameworks.",
-        "tags":  ["Python", "Flask", "HTML/CSS"],
+        "tags":  ["Python", "Flask", "HTML","CSS"],
         "link":  "#",
     },
     {
-        "title":       "Anti-Human Trafficking Dashboard",
+        "title":       "Human Trafficking Analysis",
         "description": "Interactive Power BI dashboard analysing global human "
                        "trafficking patterns using UNODC data (2003–2023, 160+ countries). "
                        "Covers victim gender, age, exploitation type trends, and a country "
