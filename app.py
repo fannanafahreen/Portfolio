@@ -44,7 +44,7 @@ skill_groups = [
     },
     {
         "label": "Databases",
-        "items": ["PostgreSQL", "SQLAlchemy", "Firebase"],
+        "items": ["PostgreSQL", "SQLAlchemy", "Firebase","Neo4j"],
     },
     {
         "label": "Visualization & BI",
