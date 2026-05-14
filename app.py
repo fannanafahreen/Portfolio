@@ -68,7 +68,7 @@ education = [
 # ── Work Experience ──────────────────────────────────────────
 experience = [
     {
-        "role":        "Web Developer Intern",
+        "role":        "Data Science Intern",
         "company":     "Rahab's Daughters",
         "period":      "May 2026 – Present",
         "points": [
