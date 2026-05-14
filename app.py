@@ -139,13 +139,6 @@ projects = [
         "link":  "#",
     },
     {
-        "title":       "Data Visualiser",
-        "description": "Upload any CSV and get an auto-generated set of "
-                       "charts to explore distributions and correlations.",
-        "tags":  ["Python", "Pandas", "Seaborn", "Flask"],
-        "link":  "#",
-    },
-    {
         "title":       "Portfolio Website",
         "description": "This CV-style portfolio, built from scratch with "
                        "Flask and plain CSS — no frameworks.",
