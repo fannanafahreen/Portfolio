@@ -68,6 +68,16 @@ education = [
 # ── Work Experience ──────────────────────────────────────────
 experience = [
     {
+        "role":        "Web Developer Intern",
+        "company":     "Rahab's Daughters",
+        "period":      "May 2026 – Present",
+        "points": [
+            "Developing the organisation's website using Go High Level for an anti-human trafficking charity.",
+            "Building landing pages, forms, and automation workflows to support outreach and fundraising.",
+            "Collaborating with staff to translate mission and programme content into effective web design.",
+        ],
+    },
+    {
         "role":        "Data Analyst",
         "company":     "Redorch Technology LTD",
         "period":      "Feb 2025 – Nov 2025",
@@ -82,6 +92,22 @@ experience = [
 
 # ── Projects ─────────────────────────────────────────────────
 projects = [
+    {
+        "title":       "LondonWatch",
+        "description": (
+            "A data-driven intelligence platform built to support anti-human trafficking "
+            "investigations in London. Automatically analyses 5.7 million+ UK business "
+            "registrations, 446,000 georeferenced postcodes, census overcrowding data, "
+            "crime statistics, and NRM referral records to identify high-risk geographic "
+            "areas and suspicious business patterns. Applies Isolation Forest anomaly "
+            "detection and graph-theoretic network analysis, with a multi-signal convergence "
+            "scoring algorithm that classifies all 33 London boroughs by trafficking risk. "
+            "Exposes a RESTful API serving an interactive Leaflet.js map dashboard with "
+            "real-time Companies House API integration and financial pattern analysis."
+        ),
+        "tags":  ["Python", "FastAPI", "PostgreSQL", "React", "Leaflet.js", "scikit-learn", "NetworkX", "Pandas"],
+        "link":  "#",
+    },
     {
         "title":       "Customer Churn Predictor",
         "description": "End-to-end ML pipeline (EDA → feature engineering → "
