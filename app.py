@@ -28,23 +28,31 @@ owner = {
 skill_groups = [
     {
         "label": "Programming",
-        "items": ["Python", "SQL", "Kotlin", "C"],
+        "items": ["Python", "SQL", "JavaScript", "Kotlin", "C"],
     },
     {
-        "label": "Libraries / Tools",
-        "items": ["Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
+        "label": "Machine Learning",
+        "items": ["Scikit-learn", "Isolation Forest", "Random Forest", "NetworkX", "Feature Engineering", "Model Evaluation"],
     },
     {
-        "label": "Data Analytics",
-        "items": ["Data Cleaning", "EDA", "Feature Engineering", "Model Evaluation"],
+        "label": "Data & Analytics",
+        "items": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "EDA", "Data Cleaning"],
     },
     {
-        "label": "Visualization",
+        "label": "Web & APIs",
+        "items": ["React", "FastAPI", "Flask", "Vite", "Leaflet.js", "HTML", "CSS", "RESTful APIs"],
+    },
+    {
+        "label": "Databases",
+        "items": ["PostgreSQL", "SQLAlchemy", "Firebase"],
+    },
+    {
+        "label": "Visualization & BI",
         "items": ["Power BI", "Excel (Power Query, Power Pivot)"],
     },
     {
-        "label": "Other",
-        "items": ["Git", "GitHub", "Firebase"],
+        "label": "Tools",
+        "items": ["Git", "GitHub", "Jupyter", "Go High Level"],
     },
 ]
 
