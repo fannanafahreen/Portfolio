@@ -103,18 +103,33 @@ projects = [
     {
         "title":       "LondonWatch",
         "description": (
-            "A data-driven intelligence platform built to support anti-human trafficking "
-            "investigations in London. Automatically analyses 5.7 million+ UK business "
-            "registrations, 446,000 georeferenced postcodes, census overcrowding data, "
-            "crime statistics, and NRM referral records to identify high-risk geographic "
-            "areas and suspicious business patterns. Applies Isolation Forest anomaly "
-            "detection and graph-theoretic network analysis, with a multi-signal convergence "
-            "scoring algorithm that classifies all 33 London boroughs by trafficking risk. "
-            "Exposes a RESTful API serving an interactive Leaflet.js map dashboard with "
-            "real-time Companies House API integration and financial pattern analysis."
+            "Intelligence platform supporting anti-human trafficking investigations in London. "
+            "Analyses 5.7M+ UK business registrations, census data, crime statistics, and NRM "
+            "records using Isolation Forest and graph network analysis to classify all 33 boroughs "
+            "by risk level. Includes an interactive Leaflet.js map with real-time Companies House API integration."
         ),
         "tags":  ["Python", "FastAPI", "PostgreSQL", "React", "Leaflet.js", "scikit-learn", "NetworkX", "Pandas"],
-        "link":  "#",
+        "link":  "https://github.com/fannanafahreen/London_based_Anti_Human_Trafficking_Platform",
+    },
+    {
+        "title":       "UK Banking Risk Intelligence Dashboard",
+        "description": (
+            "End-to-end banking risk project combining three real-world datasets to predict "
+            "loan default risk with a Random Forest model. Key finding: students aged 26–35 "
+            "defaulted at 95%, nearly 14x the portfolio average. Presented in a 6-page "
+            "interactive Power BI dashboard with DAX measures, drill-through, and key influencer visuals."
+        ),
+        "tags":  ["Python", "Scikit-learn", "Power BI", "DAX", "SQLite", "Pandas"],
+        "link":  "https://github.com/fannanafahreen/uk-banking-risk-intelligence-dashboard",
+    },
+    {
+        "title":       "Fraud Detector",
+        "description": "Full-stack credit-card fraud detection app. "
+                       "An Isolation Forest model flags anomalous transactions via a FastAPI /predict endpoint; "
+                       "a React 18 / Vite frontend renders a confidence gauge "
+                       "with green/red result cards. Backend deployed on Render, frontend on Vercel.",
+        "tags":  ["Python", "FastAPI", "Scikit-learn", "React", "Vite"],
+        "link":  "https://github.com/fannanafahreen/fraud-detector",
     },
     {
         "title":       "Customer Churn Predictor",
@@ -134,7 +149,7 @@ projects = [
         "title":       "Portfolio Website",
         "description": "This CV-style portfolio, built from scratch with "
                        "Flask and plain CSS — no frameworks.",
-        "tags":  ["Python", "Flask", "HTML","CSS"],
+        "tags":  ["Python", "Flask", "HTML", "CSS"],
         "link":  "#",
     },
     {
@@ -145,17 +160,6 @@ projects = [
                        "distribution map. Dataset cleaned with Python (Pandas) in Jupyter Notebook.",
         "tags":  ["Power BI", "Python", "Pandas", "Jupyter"],
         "link":  "https://github.com/fannanafahreen/Human-Trafficking-Analysis",
-    },
-    {
-        "title":       "Fraud Detector",
-        "description": "Full-stack credit-card fraud detection app. "
-                       "An Isolation Forest model (scikit-learn) flags "
-                       "anomalous transactions via a FastAPI /predict endpoint; "
-                       "a React 18 / Vite frontend renders a confidence gauge "
-                       "with green/red result cards. Backend deployed on Render, "
-                       "frontend on Vercel.",
-        "tags":  ["Python", "FastAPI", "Scikit-learn", "React", "Vite"],
-        "link":  "https://github.com/fannanafahreen/fannanafahreen",
     },
 ]
 
