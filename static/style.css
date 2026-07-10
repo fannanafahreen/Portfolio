@@ -287,6 +287,11 @@ ul { list-style: none; }
   color: var(--muted);
 }
 
+.cv-entry .cv-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
 /* Bullet points for work experience */
 .cv-bullets {
   list-style: disc;

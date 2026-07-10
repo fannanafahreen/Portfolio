@@ -103,12 +103,16 @@ projects = [
     {
         "title":       "LondonWatch",
         "description": (
-            "Intelligence platform supporting anti-human trafficking investigations in London. "
-            "Analyses 5.7M+ UK business registrations, census data, crime statistics, and NRM "
-            "records using Isolation Forest and graph network analysis to classify all 33 boroughs "
-            "by risk level. Includes an interactive Leaflet.js map with real-time Companies House API integration."
+            "Full-stack intelligence platform analysing 5.7M+ UK Companies House records and "
+            "2M+ Land Registry records to detect business networks associated with human "
+            "trafficking and labour exploitation across London. Applies Social Network Analysis "
+            "(NetworkX, Louvain community detection, betweenness centrality, link prediction) to "
+            "a graph of 569,000+ nodes and 366,000+ edges, surfacing 215,000+ corporate rings. "
+            "Uses Isolation Forest for director anomaly detection and a weakly-supervised Random "
+            "Forest for ring risk scoring across 150,000+ directors, with RapidFuzz name-matching "
+            "deduplication and phoenix-company fraud detection."
         ),
-        "tags":  ["Python", "FastAPI", "PostgreSQL", "React", "Leaflet.js", "scikit-learn", "NetworkX", "Pandas"],
+        "tags":  ["Python", "FastAPI", "PostgreSQL", "Neo4j", "React", "Leaflet.js", "Cytoscape.js", "NetworkX", "Scikit-learn", "Docker"],
         "link":  "https://github.com/fannanafahreen/London_based_Anti_Human_Trafficking_Platform",
     },
     {
@@ -123,13 +127,29 @@ projects = [
         "link":  "https://github.com/fannanafahreen/uk-banking-risk-intelligence-dashboard",
     },
     {
-        "title":       "Fraud Detector",
-        "description": "Full-stack credit-card fraud detection app. "
-                       "An Isolation Forest model flags anomalous transactions via a FastAPI /predict endpoint; "
-                       "a React 18 / Vite frontend renders a confidence gauge "
-                       "with green/red result cards. Backend deployed on Render, frontend on Vercel.",
-        "tags":  ["Python", "FastAPI", "Scikit-learn", "React", "Vite"],
+        "title":       "FraudGuard",
+        "description": (
+            "Real-time fraud detection dashboard trained on 284,807 credit-card transactions "
+            "(0.17% fraud rate, 578:1 class imbalance). An XGBoost classifier with PR-AUC-optimised "
+            "thresholds flags transactions as Fraud / Review / Safe, and a LangChain + OpenAI "
+            "GPT-4o-mini pipeline generates plain-language explanations for every flagged case. "
+            "React dashboard shows live KPI cards, a real-time transaction feed, fraud-by-hour "
+            "trends, and model performance metrics. Deployed via Docker Compose, Render, and Vercel."
+        ),
+        "tags":  ["Python", "FastAPI", "XGBoost", "LangChain", "OpenAI GPT-4o-mini", "React", "Docker"],
         "link":  "https://github.com/fannanafahreen/fraud-detector",
+    },
+    {
+        "title":       "GB Electricity Price Forecasting",
+        "description": (
+            "Quantitative forecasting pipeline for GB electricity price exposure, joining 6 years "
+            "of daily data from four live UK energy APIs (Elexon BMRS, Ofgem, National Grid NESO, "
+            "Open-Meteo ERA5). EDA identified gas price and autocorrelation as primary drivers; "
+            "44 engineered features feed an XGBoost regressor achieving R²=0.97 and MAPE=5.99% "
+            "on 351 unseen test days."
+        ),
+        "tags":  ["Python", "XGBoost", "Pandas", "NumPy", "Scikit-learn", "REST APIs"],
+        "link":  "https://github.com/fannanafahreen",
     },
     {
         "title":       "Customer Churn Predictor",
@@ -157,6 +177,21 @@ projects = [
 ]
 
 
+# ── Certifications & Virtual Experience ─────────────────────
+certifications = [
+    {
+        "title":  "Lloyds Banking Group — Step Up Career Challenge",
+        "issuer": "Digdata / The Data Inspiration Group",
+        "period": "2025",
+        "detail": (
+            "Completed real-world data projects in financial services, recognised by the "
+            "Group Chief Data & Analytics Officer, Lloyds Banking Group."
+        ),
+        "link":   "https://drive.google.com/file/d/1du58JCSH3I72xvbyhIDrYgWKM9xReN32/view?usp=sharing",
+    },
+]
+
+
 # ── Routes ───────────────────────────────────────────────────
 @app.route("/")
 def home():
@@ -168,6 +203,7 @@ def home():
         education=education,
         experience=experience,
         projects=projects,
+        certifications=certifications,
     )
 
 

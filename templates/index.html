@@ -102,6 +102,27 @@
   </section>
 
   <!-- ══════════════════════════════
+       CERTIFICATIONS & VIRTUAL EXPERIENCE
+       ══════════════════════════════ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Certifications &amp; Virtual Experience</h2>
+
+    {% for cert in certifications %}
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <div>
+          <span class="cv-entry-title">{{ cert.title }}</span>
+          <span class="cv-entry-sub">{{ cert.issuer }}</span>
+        </div>
+        <span class="cv-entry-period">{{ cert.period }}</span>
+      </div>
+      <p class="cv-entry-detail">{{ cert.detail }}</p>
+      <a class="cv-link" href="{{ cert.link }}" target="_blank" rel="noopener">View Certificate &rarr;</a>
+    </div>
+    {% endfor %}
+  </section>
+
+  <!-- ══════════════════════════════
        FOOTER (inside main area)
        ══════════════════════════════ -->
   <footer class="cv-footer">
