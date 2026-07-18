@@ -9,12 +9,13 @@ app = Flask(__name__)
 # ── Owner / sidebar data ─────────────────────────────────────
 owner = {
     "name":     "Fannana Fahreen Aanan",
-    "title":    "Data Science Enthusiast",
+    "title":    "Data Scientist & AI Engineer",
     "bio":      (
-        "Aspiring data scientist passionate about turning raw data "
-        "into meaningful insights. I enjoy building end-to-end ML "
-        "pipelines, data visualisations, and web applications that "
-        "make analysis accessible to everyone."
+        "I build production-ready ML systems, RAG pipelines, and graph "
+        "intelligence platforms that solve real-world problems at scale. "
+        "My work spans financial crime detection, regulatory ML research, "
+        "energy market forecasting, and AI-powered applications — from raw "
+        "data ingestion through to deployed, stakeholder-facing products."
     ),
     "email":    "fannanafahreen@gmail.com",
     "phone":    "07466158752",
@@ -25,34 +26,153 @@ owner = {
 
 # ── Skills ───────────────────────────────────────────────────
 # Each skill group has a label and a list of items.
+# Each item has a display name and a Font Awesome 6 icon class,
+# rendered as an icon card in the Skills section.
 skill_groups = [
     {
-        "label": "Programming",
-        "items": ["Python", "SQL", "JavaScript", "Kotlin", "C"],
+        "label": "Programming Languages",
+        "items": [
+            {"name": "Python",      "icon": "fa-brands fa-python"},
+            {"name": "SQL",         "icon": "fa-solid fa-database"},
+            {"name": "JavaScript",  "icon": "fa-brands fa-js"},
+            {"name": "HTML & CSS",  "icon": "fa-brands fa-html5"},
+            {"name": "Kotlin",      "icon": "fa-solid fa-mobile"},
+            {"name": "C",           "icon": "fa-solid fa-code"},
+        ],
     },
     {
         "label": "Machine Learning",
-        "items": ["Scikit-learn", "Isolation Forest", "Random Forest", "NetworkX", "Feature Engineering", "Model Evaluation"],
+        "items": [
+            {"name": "Scikit-learn",                   "icon": "fa-solid fa-brain"},
+            {"name": "XGBoost",                         "icon": "fa-solid fa-bolt"},
+            {"name": "Random Forest",                   "icon": "fa-solid fa-tree"},
+            {"name": "Isolation Forest",                "icon": "fa-solid fa-filter"},
+            {"name": "Feature Engineering",              "icon": "fa-solid fa-wrench"},
+            {"name": "Anomaly Detection",                "icon": "fa-solid fa-triangle-exclamation"},
+            {"name": "Model Evaluation",                 "icon": "fa-solid fa-chart-bar"},
+            {"name": "Class Imbalance Handling",         "icon": "fa-solid fa-scale-balanced"},
+            {"name": "Cross-Validation",                 "icon": "fa-solid fa-rotate"},
+            {"name": "Expanding-Window Backtesting",     "icon": "fa-solid fa-clock-rotate-left"},
+        ],
     },
     {
-        "label": "Data & Analytics",
-        "items": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "EDA", "Data Cleaning"],
+        "label": "AI & LLM Systems",
+        "items": [
+            {"name": "LangChain",                "icon": "fa-solid fa-link"},
+            {"name": "FAISS",                     "icon": "fa-solid fa-magnifying-glass"},
+            {"name": "sentence-transformers",     "icon": "fa-solid fa-vector-square"},
+            {"name": "Amazon Bedrock",            "icon": "fa-brands fa-aws"},
+            {"name": "OpenAI GPT-4o-mini",        "icon": "fa-solid fa-robot"},
+            {"name": "Prompt Engineering",        "icon": "fa-solid fa-terminal"},
+            {"name": "RAG Pipelines",             "icon": "fa-solid fa-sitemap"},
+            {"name": "PDF Parsing",               "icon": "fa-solid fa-file-pdf"},
+            {"name": "Semantic Chunking",         "icon": "fa-solid fa-scissors"},
+            {"name": "AI Workflow Automation",    "icon": "fa-solid fa-gears"},
+        ],
     },
     {
-        "label": "Web & APIs",
-        "items": ["React", "FastAPI", "Flask", "Vite", "Leaflet.js", "HTML", "CSS", "RESTful APIs"],
+        "label": "Graph & Network Analysis",
+        "items": [
+            {"name": "NetworkX",                     "icon": "fa-solid fa-diagram-project"},
+            {"name": "Neo4j",                         "icon": "fa-solid fa-circle-nodes"},
+            {"name": "Louvain Community Detection",   "icon": "fa-solid fa-object-group"},
+            {"name": "Betweenness Centrality",        "icon": "fa-solid fa-network-wired"},
+            {"name": "Link Prediction",               "icon": "fa-solid fa-arrows-to-dot"},
+            {"name": "Cytoscape.js",                  "icon": "fa-solid fa-share-nodes"},
+            {"name": "Graph Database Design",         "icon": "fa-solid fa-database"},
+        ],
     },
     {
-        "label": "Databases",
-        "items": ["PostgreSQL", "SQLAlchemy", "Firebase","Neo4j"],
+        "label": "Time-Series & Forecasting",
+        "items": [
+            {"name": "Autocorrelation Analysis",          "icon": "fa-solid fa-chart-line"},
+            {"name": "Seasonal Decomposition",            "icon": "fa-solid fa-wave-square"},
+            {"name": "Lag Feature Engineering",           "icon": "fa-solid fa-hourglass-half"},
+            {"name": "Rolling Statistics",                "icon": "fa-solid fa-chart-area"},
+            {"name": "Volatility Regime Classification",  "icon": "fa-solid fa-chart-simple"},
+            {"name": "Data Leakage Prevention",           "icon": "fa-solid fa-shield-halved"},
+        ],
     },
     {
-        "label": "Visualization & BI",
-        "items": ["Power BI", "Excel (Power Query, Power Pivot)"],
+        "label": "Data Engineering & ETL",
+        "items": [
+            {"name": "Pandas",                  "icon": "fa-solid fa-table"},
+            {"name": "NumPy",                    "icon": "fa-solid fa-square-root-variable"},
+            {"name": "SciPy",                    "icon": "fa-solid fa-flask"},
+            {"name": "ETL Pipeline Design",      "icon": "fa-solid fa-pipe-section"},
+            {"name": "RapidFuzz",                "icon": "fa-solid fa-spell-check"},
+            {"name": "PostgreSQL",               "icon": "fa-solid fa-database"},
+            {"name": "MySQL",                    "icon": "fa-solid fa-database"},
+            {"name": "SQLite",                   "icon": "fa-solid fa-database"},
+            {"name": "SQLAlchemy",               "icon": "fa-solid fa-layer-group"},
+            {"name": "Firebase",                 "icon": "fa-solid fa-fire"},
+            {"name": "Star Schema Modelling",    "icon": "fa-solid fa-star"},
+            {"name": "Data Quality Assurance",   "icon": "fa-solid fa-list-check"},
+            {"name": "EDA",                      "icon": "fa-solid fa-magnifying-glass-chart"},
+        ],
     },
     {
-        "label": "Tools",
-        "items": ["Git", "GitHub", "Jupyter", "Go High Level"],
+        "label": "Cloud & DevOps",
+        "items": [
+            {"name": "AWS EC2",           "icon": "fa-brands fa-aws"},
+            {"name": "AWS IAM",           "icon": "fa-solid fa-user-shield"},
+            {"name": "Docker",            "icon": "fa-brands fa-docker"},
+            {"name": "Docker Compose",    "icon": "fa-solid fa-boxes-stacked"},
+            {"name": "Git",               "icon": "fa-brands fa-git-alt"},
+            {"name": "GitHub",            "icon": "fa-brands fa-github"},
+            {"name": "Render",            "icon": "fa-solid fa-server"},
+            {"name": "Vercel",            "icon": "fa-solid fa-rocket"},
+            {"name": "Netlify",           "icon": "fa-solid fa-cloud"},
+        ],
+    },
+    {
+        "label": "Full-Stack Development",
+        "items": [
+            {"name": "FastAPI",         "icon": "fa-solid fa-bolt"},
+            {"name": "Flask",           "icon": "fa-solid fa-flask"},
+            {"name": "React 18",        "icon": "fa-brands fa-react"},
+            {"name": "Vite",            "icon": "fa-solid fa-fire"},
+            {"name": "React Router",    "icon": "fa-solid fa-route"},
+            {"name": "Recharts",        "icon": "fa-solid fa-chart-pie"},
+        ],
+    },
+    {
+        "label": "Geographic & Mapping",
+        "items": [
+            {"name": "Leaflet.js",                  "icon": "fa-solid fa-map-location-dot"},
+            {"name": "Choropleth Visualisation",    "icon": "fa-solid fa-earth-europe"},
+            {"name": "Spatial Data Rendering",      "icon": "fa-solid fa-location-dot"},
+        ],
+    },
+    {
+        "label": "BI & Visualisation",
+        "items": [
+            {"name": "Power BI",        "icon": "fa-solid fa-chart-column"},
+            {"name": "DAX",             "icon": "fa-solid fa-function"},
+            {"name": "Power Query",     "icon": "fa-solid fa-filter"},
+            {"name": "Matplotlib",      "icon": "fa-solid fa-chart-line"},
+            {"name": "Seaborn",         "icon": "fa-solid fa-chart-area"},
+            {"name": "Excel",           "icon": "fa-solid fa-file-excel"},
+            {"name": "Power Pivot",     "icon": "fa-solid fa-table-columns"},
+        ],
+    },
+    {
+        "label": "Financial Crime & Regulatory",
+        "items": [
+            {"name": "Fraud Detection",              "icon": "fa-solid fa-shield-halved"},
+            {"name": "Financial Crime Analytics",    "icon": "fa-solid fa-magnifying-glass-dollar"},
+            {"name": "FCA Regulatory ML",            "icon": "fa-solid fa-landmark"},
+            {"name": "Corporate Network Analysis",   "icon": "fa-solid fa-building"},
+            {"name": "Phoenix Company Detection",    "icon": "fa-solid fa-fire-flame-curved"},
+        ],
+    },
+    {
+        "label": "Workflow Automation",
+        "items": [
+            {"name": "Go High Level",        "icon": "fa-solid fa-wand-magic-sparkles"},
+            {"name": "Outreach Automation",  "icon": "fa-solid fa-paper-plane"},
+            {"name": "Form Automation",      "icon": "fa-solid fa-envelope-open-text"},
+        ],
     },
 ]
 
@@ -99,7 +219,40 @@ experience = [
 ]
 
 # ── Projects ─────────────────────────────────────────────────
+# "category" is optional — when present it renders as a small gold
+# tag at the top of the project card. "link" of None renders a
+# "Pending Publication" badge instead of a View link.
 projects = [
+    {
+        "title":       "Ask My Documents — RAG-Powered Regulatory Research Assistant",
+        "description": (
+            "Full-stack AI application that transforms FCA enforcement notices into an "
+            "interactive, queryable knowledge base. Built a complete RAG pipeline from "
+            "scratch covering PDF parsing, semantic chunking, and vector embeddings using "
+            "sentence-transformers. Implements FAISS for fast similarity search across "
+            "document chunks and integrates Amazon Bedrock (Nova 2 Lite) for grounded, "
+            "hallucination-resistant answer generation. Provisioned full AWS infrastructure "
+            "(EC2, IAM roles, security groups) with a focus on cost control and security best "
+            "practices. Diagnosed and resolved real memory allocation constraints on cloud "
+            "instances by migrating from self-hosted inference to managed AI infrastructure."
+        ),
+        "tags":     ["Python", "FastAPI", "FAISS", "sentence-transformers", "Amazon Bedrock", "AWS EC2", "AWS IAM", "HTML/CSS/JavaScript", "Git/GitHub"],
+        "link":     "https://github.com/fannanafahreen/FCA-disciplinary-Q-A-App",
+        "category": "GenAI / RAG / AWS",
+    },
+    {
+        "title":       "FCA Adverse Outcome Prediction — Regulatory ML Research",
+        "description": (
+            "ML research pipeline to predict adverse regulatory outcomes for FCA-regulated "
+            "firms. Applies XGBoost classification with an expanding-window backtesting "
+            "methodology to preserve temporal integrity and prevent data leakage. Involves "
+            "financial regulatory data analysis and feature engineering across FCA firm-level "
+            "datasets. Currently being prepared for academic publication."
+        ),
+        "tags":     ["Python", "XGBoost", "Pandas", "Scikit-learn", "Jupyter"],
+        "link":     None,
+        "category": "Regulatory ML / Research",
+    },
     {
         "title":       "LondonWatch",
         "description": (
@@ -149,14 +302,14 @@ projects = [
             "on 351 unseen test days."
         ),
         "tags":  ["Python", "XGBoost", "Pandas", "NumPy", "Scikit-learn", "REST APIs"],
-        "link":  "https://github.com/fannanafahreen",
+        "link":  "https://github.com/fannanafahreen/Nationwide-utilities-energy-forecast",
     },
     {
         "title":       "Customer Churn Predictor",
         "description": "End-to-end ML pipeline (EDA → feature engineering → "
                        "Random Forest) achieving 87 % accuracy on test data.",
         "tags":  ["Python", "Scikit-learn", "Pandas", "Jupyter"],
-        "link":  "#",
+        "link":  "https://github.com/fannanafahreen/Customer-churn",
     },
     {
         "title":       "Portfolio Website",

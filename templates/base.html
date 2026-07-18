@@ -4,68 +4,102 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% block title %}{{ owner.name }}{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
   <meta name="google-site-verification" content="satuBVeQqJXdBHIkgieP3xddVLknrOh6QUbPS0irMVE" />
 </head>
 <body>
 
-  {# CV wrapper: sidebar on the left, main content on the right #}
-  <div class="cv-wrapper">
+  <!-- ═══════════════════════════════════════════
+       STICKY NAVIGATION
+       ═══════════════════════════════════════════ -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo">{{ owner.name.split(' ')[0] }}</a>
+      <ul class="nav-links">
+        <li><a href="#skills" data-section="skills">Skills</a></li>
+        <li><a href="#education" data-section="education">Education</a></li>
+        <li><a href="#experience" data-section="experience">Experience</a></li>
+        <li><a href="#projects" data-section="projects">Projects</a></li>
+        <li><a href="#certifications" data-section="certifications">Certifications</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- ═══════════════════════════════════════════
-         LEFT SIDEBAR
-         Contains: photo, name, title, bio, contact
-         ═══════════════════════════════════════════ -->
-    <aside class="sidebar">
+  <!-- ═══════════════════════════════════════════
+       HERO
+       Two-column: text (left) + photo ring (right).
+       Replaces the old sidebar as the page's intro.
+       ═══════════════════════════════════════════ -->
+  <section class="hero" id="top">
+    <span class="sparkle s1" aria-hidden="true">&#10022;</span>
+    <span class="sparkle s2" aria-hidden="true">&#10022;</span>
+    <span class="sparkle s3" aria-hidden="true">&#10022;</span>
+    <div class="hero-glow" aria-hidden="true"></div>
 
-      <!-- Profile photo placeholder (replace src with a real image later) -->
-      <div class="profile-photo">
-        <img src="{{ url_for('static', filename='Fannana.jpg') }}" alt="Fahreen" />
+    <div class="left">
+      <p class="greeting">Hello, I'm</p>
+      <h1 class="hero-name">{{ owner.name }}</h1>
+      <p class="hero-title"><em>{{ owner.title }}</em></p>
+      <p class="hero-bio">{{ owner.bio }}</p>
+
+      <!-- Primary CTAs -->
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="mailto:{{ owner.email }}">Get in Touch</a>
+        <a class="btn btn-secondary" href="{{ owner.github }}" target="_blank" rel="noopener">GitHub</a>
       </div>
 
-      <h1 class="sidebar-name">{{ owner.name }}</h1>
-      <p class="sidebar-title">{{ owner.title }}</p>
+      <!-- Social icons -->
+      <div class="social-icons">
+        <a href="{{ owner.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="{{ owner.github }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:{{ owner.email }}" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
 
-      <p class="sidebar-bio">{{ owner.bio }}</p>
-
-      <!-- Divider line -->
-      <hr class="sidebar-divider" />
-
-      <!-- Contact / links -->
-      <ul class="sidebar-contact">
-        <li>
-          <span class="contact-icon">&#9993;</span>
-          <a href="mailto:{{ owner.email }}">{{ owner.email }}</a>
-        </li>
-        <li>
-          <span class="contact-icon">&#128222;</span>
-          <a href="tel:{{ owner.phone }}">{{ owner.phone }}</a>
-        </li>
+      <!-- Remaining contact details -->
+      <ul class="hero-meta">
         <li>
           <span class="contact-icon">&#128205;</span>
           {{ owner.location }}
         </li>
         <li>
-          <span class="contact-icon">&#128279;</span>
-          <a href="{{ owner.github }}" target="_blank">GitHub</a>
-        </li>
-        <li>
-          <span class="contact-icon">&#128279;</span>
-          <a href="{{ owner.linkedin }}" target="_blank">LinkedIn</a>
+          <span class="contact-icon">&#128222;</span>
+          <a href="tel:{{ owner.phone }}">{{ owner.phone }}</a>
         </li>
       </ul>
+    </div>
 
-    </aside>
+    <div class="right">
+      <div class="photo-wrap">
+        <div class="gold-ring-outer" aria-hidden="true"></div>
+        <div class="gold-ring-inner" aria-hidden="true"></div>
+        <div class="photo-circle">
+          <img src="{{ url_for('static', filename='Fannana.jpg') }}" alt="Fahreen" />
+          <div class="photo-glow" aria-hidden="true"></div>
+        </div>
+        <svg class="rotating-badge" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <path id="textCircle" d="M160,160 m-128,0 a128,128 0 1,1 256,0 a128,128 0 1,1 -256,0" />
+          </defs>
+          <text font-family="DM Sans, sans-serif" font-size="11.5" fill="#c9a84c" letter-spacing="3.5" opacity="0.75">
+            <textPath href="#textCircle">DATA SCIENTIST &#8226; AI ENGINEER &#8226; FINTECH &#8226; ML &#8226; RAG &#8226; </textPath>
+          </text>
+        </svg>
+      </div>
+    </div>
+  </section>
 
-    <!-- ═══════════════════════════════════════════
-         RIGHT MAIN AREA
-         Child templates fill in this block.
-         ═══════════════════════════════════════════ -->
-    <main class="cv-main">
-      {% block content %}{% endblock %}
-    </main>
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+       Child templates fill in this block.
+       ═══════════════════════════════════════════ -->
+  <main class="cv-main">
+    {% block content %}{% endblock %}
+  </main>
 
-  </div>{# end .cv-wrapper #}
-
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
